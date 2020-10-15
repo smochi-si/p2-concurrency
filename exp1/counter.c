@@ -21,6 +21,8 @@ int c_and_sFlag = 0;
 
 pthread_mutex_t mutex;
 // todo: define a spinlock variable 
+static pthread_spinlock_t spinlock;
+
 
 char const * getTestName() {
     if(mutexFlag)
@@ -57,18 +59,24 @@ void add_iterate(int val, int iterations) {
         }
         else if(spinLockFlag) {
             // todo: lock the spinlock
-            add(&the_counter, val);
+		pthread_spin_lock (&spinlock);
+
+    		add(&the_counter, val);
             // todo: unlock the spinlock
-        }
+		pthread_spin_unlock(&spinlock);
+	}
         else if(c_and_sFlag) {
-            long long oldVal, newVal;
+            	long long oldVal, newVal;
 			
 			/* todo: change the following, so that it updates @the_counter atomically using CAS */
-			oldVal = the_counter;
-			newVal = oldVal + val;
-			the_counter = newVal; 
+		oldVal = the_counter;
+		newVal = oldVal + val;
+			//the_counter = newVal; 
 			/* --- */
-        }
+		__atomic_compare_exchange_n(&the_counter, &oldVal, newVal, 1 , __ATOMIC_SEQ_CST, __ATOMIC_SEQ_CST);
+		__atomic_store_n(&the_counter, 0, __ATOMIC_SEQ_CST);
+
+	}
         else
             add(&the_counter, val);
     }

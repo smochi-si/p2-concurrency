@@ -127,6 +127,7 @@ int main(int argc, char** argv) {
                         break;
                     case 's':
                         spinLockFlag = 1;
+			pthread_spin_init (&spinlock, 0);
                         break;
                     case 'c':
                         c_and_sFlag = 1;

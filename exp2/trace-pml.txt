@@ -9,15 +9,15 @@ list 0: 1000000 items;
 total 1000000 items
 --------------------k2_measure_flush------#samples=6---------------
                                      msg   delta(tod/us)        now(tod) 
-*                                    init               0       206055149 
-                                init done             130       206055279 
-                              tr launched              61       206055340 
-                                 tr start              17       206055357 
-                                  tr done           25652       206081009 
-                                tr joined              34       206081043 
- TOTAL: 25894 us(gettimeofday)  tracebuf overflow: 0
+*                                    init               0      2701938424 
+                                init done             140      2701938564 
+                              tr launched              72      2701938636 
+                                 tr start              60      2701938696 
+                                  tr done           25983      2701964679 
+                                tr joined              98      2701964777 
+ TOTAL: 26353 us(gettimeofday)  tracebuf overflow: 0
 ---------------------------------------------------------------
-test=list-none-4part threadNum=1 iterations=1000000 numList=4 numOperation=1000000 runTime(ms)=25 tput(Mops)=38.81
+test=list-none-4part threadNum=1 iterations=1000000 numList=4 numOperation=1000000 runTime(ms)=26 tput(Mops)=38.15
 USE_PREALLOC=yes
 USE_MULTILISTS=no
 USE_LB=yes
@@ -29,17 +29,17 @@ list 0: 1000000 items; list 1: 1000000 items;
 total 2000000 items
 --------------------k2_measure_flush------#samples=8---------------
                                      msg   delta(tod/us)        now(tod) 
-*                                    init               0       206087110 
-                                init done              63       206087173 
-                              tr launched              74       206087247 
-                                 tr start               7       206087254 
-                                 tr start              42       206087296 
-                                  tr done           26591       206113887 
-                                  tr done            2100       206115987 
-                                tr joined              19       206116006 
- TOTAL: 28896 us(gettimeofday)  tracebuf overflow: 0
+*                                    init               0      2701975642 
+                                init done             121      2701975763 
+                                 tr start             105      2701975868 
+                              tr launched              14      2701975882 
+                                 tr start              43      2701975925 
+                                  tr done           25617      2702001542 
+                                  tr done            3498      2702005040 
+                                tr joined              61      2702005101 
+ TOTAL: 29459 us(gettimeofday)  tracebuf overflow: 0
 ---------------------------------------------------------------
-test=list-none-8part threadNum=2 iterations=1000000 numList=8 numOperation=2000000 runTime(ms)=28 tput(Mops)=69.37
+test=list-none-8part threadNum=2 iterations=1000000 numList=8 numOperation=2000000 runTime(ms)=29 tput(Mops)=68.18
 USE_PREALLOC=yes
 USE_MULTILISTS=no
 USE_LB=yes
@@ -47,25 +47,25 @@ USE_PADDING=no
 init 1 mutex, 16 spinlocks
 init 4 lists. sizeof(SortedList_t) = 24 padding seems: OFF
 init 4000000 elements
-list 0: 1000000 items; list 1: 1000000 items; list 2: 1000000 items; list 3: 1000000 items; 
+list 0: 1250000 items; list 1: 750000 items; list 2: 1000000 items; list 3: 1000000 items; 
 total 4000000 items
 --------------------k2_measure_flush------#samples=12---------------
                                      msg   delta(tod/us)        now(tod) 
-*                                    init               0       206132143 
-                                init done             100       206132243 
-                                 tr start              51       206132294 
-                                 tr start              52       206132346 
-                                 tr start              11       206132357 
-                              tr launched              37       206132394 
-                                 tr start               6       206132400 
-                                  tr done           30305       206162705 
-                                  tr done            6171       206168876 
-                                  tr done             988       206169864 
-                                  tr done              77       206169941 
-                                tr joined              21       206169962 
- TOTAL: 37819 us(gettimeofday)  tracebuf overflow: 0
+*                                    init               0      2702021328 
+                                init done             108      2702021436 
+                                 tr start              84      2702021520 
+                                 tr start              45      2702021565 
+                                 tr start              54      2702021619 
+                              tr launched              51      2702021670 
+                                 tr start               8      2702021678 
+                                  tr done           34421      2702056099 
+                                  tr done            1504      2702057603 
+                                  tr done            2118      2702059721 
+                                  tr done            1225      2702060946 
+                                tr joined              62      2702061008 
+ TOTAL: 39680 us(gettimeofday)  tracebuf overflow: 0
 ---------------------------------------------------------------
-test=list-none-16part threadNum=4 iterations=1000000 numList=16 numOperation=4000000 runTime(ms)=37 tput(Mops)=106.05
+test=list-none-16part threadNum=4 iterations=1000000 numList=16 numOperation=4000000 runTime(ms)=39 tput(Mops)=101.08
 USE_PREALLOC=yes
 USE_MULTILISTS=no
 USE_LB=yes
@@ -73,29 +73,29 @@ USE_PADDING=no
 init 1 mutex, 24 spinlocks
 init 6 lists. sizeof(SortedList_t) = 24 padding seems: OFF
 init 6000000 elements
-list 0: 1000000 items; list 1: 1000000 items; list 2: 1000000 items; list 3: 1000000 items; list 4: 1000000 items; list 5: 1000000 items; 
+list 0: 750000 items; list 1: 1000000 items; list 2: 1000000 items; list 3: 1250000 items; list 4: 1000000 items; list 5: 1000000 items; 
 total 6000000 items
 --------------------k2_measure_flush------#samples=16---------------
                                      msg   delta(tod/us)        now(tod) 
-*                                    init               0       206195882 
-                                init done             126       206196008 
-                                 tr start              68       206196076 
-                                 tr start              50       206196126 
-                                 tr start              23       206196149 
-                                 tr start              39       206196188 
-                                 tr start              36       206196224 
-                              tr launched              29       206196253 
-                                 tr start               6       206196259 
-                                  tr done           29252       206225511 
-                                  tr done             434       206225945 
-                                  tr done            1087       206227032 
-                                  tr done             213       206227245 
-                                  tr done            1763       206229008 
-                                  tr done             976       206229984 
-                                tr joined              67       206230051 
- TOTAL: 34169 us(gettimeofday)  tracebuf overflow: 0
+*                                    init               0      2702089089 
+                                init done             103      2702089192 
+                                 tr start             110      2702089302 
+                                 tr start               7      2702089309 
+                                 tr start              62      2702089371 
+                                 tr start             100      2702089471 
+                                 tr start              48      2702089519 
+                              tr launched               3      2702089522 
+                                 tr start              41      2702089563 
+                                  tr done           28791      2702118354 
+                                  tr done            1282      2702119636 
+                                  tr done            1325      2702120961 
+                                  tr done             737      2702121698 
+                                  tr done            1017      2702122715 
+                                  tr done             779      2702123494 
+                                tr joined             118      2702123612 
+ TOTAL: 34523 us(gettimeofday)  tracebuf overflow: 0
 ---------------------------------------------------------------
-test=list-none-24part threadNum=6 iterations=1000000 numList=24 numOperation=6000000 runTime(ms)=34 tput(Mops)=176.27
+test=list-none-24part threadNum=6 iterations=1000000 numList=24 numOperation=6000000 runTime(ms)=34 tput(Mops)=174.33
 USE_PREALLOC=yes
 USE_MULTILISTS=no
 USE_LB=yes
@@ -103,33 +103,33 @@ USE_PADDING=no
 init 1 mutex, 32 spinlocks
 init 8 lists. sizeof(SortedList_t) = 24 padding seems: OFF
 init 8000000 elements
-list 0: 2000000 items; list 1: 750000 items; list 2: 750000 items; list 3: 750000 items; list 4: 750000 items; list 5: 750000 items; list 6: 750000 items; list 7: 1500000 items; 
+list 0: 1750000 items; list 1: 750000 items; list 2: 1000000 items; list 3: 750000 items; list 4: 750000 items; list 5: 750000 items; list 6: 750000 items; list 7: 1500000 items; 
 total 8000000 items
 --------------------k2_measure_flush------#samples=20---------------
                                      msg   delta(tod/us)        now(tod) 
-*                                    init               0       206262027 
-                                init done             132       206262159 
-                                 tr start              61       206262220 
-                                 tr start              39       206262259 
-                                 tr start              64       206262323 
-                                 tr start               3       206262326 
-                                 tr start              46       206262372 
-                                 tr start              54       206262426 
-                                 tr start              41       206262467 
-                              tr launched              79       206262546 
-                                 tr start              10       206262556 
-                                  tr done           35754       206298310 
-                                  tr done             796       206299106 
-                                  tr done              42       206299148 
-                                  tr done              14       206299162 
-                                  tr done             739       206299901 
-                                  tr done             432       206300333 
-                                  tr done             619       206300952 
-                                  tr done            1504       206302456 
-                                tr joined              86       206302542 
- TOTAL: 40515 us(gettimeofday)  tracebuf overflow: 0
+*                                    init               0      2702162366 
+                                init done             133      2702162499 
+                                 tr start             108      2702162607 
+                                 tr start              74      2702162681 
+                                 tr start              42      2702162723 
+                                 tr start              76      2702162799 
+                                 tr start              70      2702162869 
+                                 tr start              44      2702162913 
+                                 tr start              12      2702162925 
+                              tr launched              83      2702163008 
+                                 tr start               8      2702163016 
+                                  tr done           34303      2702197319 
+                                  tr done             907      2702198226 
+                                  tr done             791      2702199017 
+                                  tr done             833      2702199850 
+                                  tr done             157      2702200007 
+                                  tr done            2784      2702202791 
+                                  tr done             149      2702202940 
+                                  tr done              10      2702202950 
+                                tr joined              43      2702202993 
+ TOTAL: 40627 us(gettimeofday)  tracebuf overflow: 0
 ---------------------------------------------------------------
-test=list-none-32part threadNum=8 iterations=1000000 numList=32 numOperation=8000000 runTime(ms)=40 tput(Mops)=198.10
+test=list-none-32part threadNum=8 iterations=1000000 numList=32 numOperation=8000000 runTime(ms)=40 tput(Mops)=197.64
 USE_PREALLOC=yes
 USE_MULTILISTS=no
 USE_LB=yes
@@ -137,37 +137,37 @@ USE_PADDING=no
 init 1 mutex, 40 spinlocks
 init 10 lists. sizeof(SortedList_t) = 24 padding seems: OFF
 init 10000000 elements
-list 0: 1000000 items; list 1: 1000000 items; list 2: 1000000 items; list 3: 1000000 items; list 4: 1000000 items; list 5: 1000000 items; list 6: 1000000 items; list 7: 1000000 items; list 8: 1000000 items; list 9: 1000000 items; 
+list 0: 750000 items; list 1: 1000000 items; list 2: 1000000 items; list 3: 1000000 items; list 4: 1000000 items; list 5: 1000000 items; list 6: 1000000 items; list 7: 1000000 items; list 8: 1250000 items; list 9: 1000000 items; 
 total 10000000 items
 --------------------k2_measure_flush------#samples=24---------------
                                      msg   delta(tod/us)        now(tod) 
-*                                    init               0       206344194 
-                                init done             155       206344349 
-                                 tr start              67       206344416 
-                                 tr start              46       206344462 
-                                 tr start              43       206344505 
-                                 tr start              37       206344542 
-                                 tr start              37       206344579 
-                                 tr start              34       206344613 
-                                 tr start              54       206344667 
-                                 tr start              53       206344720 
-                                 tr start              71       206344791 
-                              tr launched              22       206344813 
-                                 tr start              26       206344839 
-                                  tr done           34790       206379629 
-                                  tr done            2902       206382531 
-                                  tr done             102       206382633 
-                                  tr done             134       206382767 
-                                  tr done            1524       206384291 
-                                  tr done              86       206384377 
-                                  tr done            1383       206385760 
-                                  tr done             337       206386097 
-                                  tr done             176       206386273 
-                                  tr done            1301       206387574 
-                                tr joined              95       206387669 
- TOTAL: 43475 us(gettimeofday)  tracebuf overflow: 0
+*                                    init               0      2702250457 
+                                init done             154      2702250611 
+                                 tr start              96      2702250707 
+                                 tr start              62      2702250769 
+                                 tr start              42      2702250811 
+                                 tr start              52      2702250863 
+                                 tr start              68      2702250931 
+                                 tr start              39      2702250970 
+                                 tr start              21      2702250991 
+                                 tr start              43      2702251034 
+                                 tr start              96      2702251130 
+                              tr launched              66      2702251196 
+                                 tr start               8      2702251204 
+                                  tr done           37630      2702288834 
+                                  tr done            1610      2702290444 
+                                  tr done             725      2702291169 
+                                  tr done             448      2702291617 
+                                  tr done             889      2702292506 
+                                  tr done            1675      2702294181 
+                                  tr done             344      2702294525 
+                                  tr done             593      2702295118 
+                                  tr done              78      2702295196 
+                                  tr done             248      2702295444 
+                                tr joined             130      2702295574 
+ TOTAL: 45117 us(gettimeofday)  tracebuf overflow: 0
 ---------------------------------------------------------------
-test=list-none-40part threadNum=10 iterations=1000000 numList=40 numOperation=10000000 runTime(ms)=43 tput(Mops)=230.87
+test=list-none-40part threadNum=10 iterations=1000000 numList=40 numOperation=10000000 runTime(ms)=44 tput(Mops)=222.43
 USE_PREALLOC=yes
 USE_MULTILISTS=no
 USE_LB=yes
@@ -175,41 +175,41 @@ USE_PADDING=no
 init 1 mutex, 48 spinlocks
 init 12 lists. sizeof(SortedList_t) = 24 padding seems: OFF
 init 12000000 elements
-list 0: 1250000 items; list 1: 1000000 items; list 2: 1000000 items; list 3: 1000000 items; list 4: 1000000 items; list 5: 1000000 items; list 6: 750000 items; list 7: 1000000 items; list 8: 1000000 items; list 9: 1000000 items; list 10: 1000000 items; list 11: 1000000 items; 
+list 0: 1250000 items; list 1: 1000000 items; list 2: 1000000 items; list 3: 1000000 items; list 4: 1000000 items; list 5: 1000000 items; list 6: 1000000 items; list 7: 1250000 items; list 8: 750000 items; list 9: 750000 items; list 10: 1000000 items; list 11: 1000000 items; 
 total 12000000 items
 --------------------k2_measure_flush------#samples=28---------------
                                      msg   delta(tod/us)        now(tod) 
-*                                    init               0       206435772 
-                                init done             158       206435930 
-                                 tr start              90       206436020 
-                                 tr start              10       206436030 
-                                 tr start              45       206436075 
-                                 tr start              32       206436107 
-                                 tr start              39       206436146 
-                                 tr start              37       206436183 
-                                 tr start              39       206436222 
-                                 tr start              52       206436274 
-                                 tr start              88       206436362 
-                                 tr start              65       206436427 
-                                 tr start              76       206436503 
-                              tr launched             107       206436610 
-                                 tr start               7       206436617 
-                                  tr done           37546       206474163 
-                                  tr done            1672       206475835 
-                                  tr done              47       206475882 
-                                  tr done            1321       206477203 
-                                  tr done             547       206477750 
-                                  tr done             279       206478029 
-                                  tr done             175       206478204 
-                                  tr done            1498       206479702 
-                                  tr done              81       206479783 
-                                  tr done             207       206479990 
-                                  tr done             411       206480401 
-                                  tr done             119       206480520 
-                                tr joined              96       206480616 
- TOTAL: 44844 us(gettimeofday)  tracebuf overflow: 0
+*                                    init               0      2702347358 
+                                init done             122      2702347480 
+                                 tr start             101      2702347581 
+                                 tr start              52      2702347633 
+                                 tr start              21      2702347654 
+                                 tr start              60      2702347714 
+                                 tr start              83      2702347797 
+                                 tr start              38      2702347835 
+                                 tr start              21      2702347856 
+                                 tr start              83      2702347939 
+                                 tr start              94      2702348033 
+                                 tr start             103      2702348136 
+                                 tr start              97      2702348233 
+                              tr launched              46      2702348279 
+                                 tr start              10      2702348289 
+                                  tr done           38031      2702386320 
+                                  tr done             314      2702386634 
+                                  tr done             729      2702387363 
+                                  tr done             834      2702388197 
+                                  tr done            3984      2702392181 
+                                  tr done             565      2702392746 
+                                  tr done              89      2702392835 
+                                  tr done             296      2702393131 
+                                  tr done             804      2702393935 
+                                  tr done              79      2702394014 
+                                  tr done             272      2702394286 
+                                  tr done              86      2702394372 
+                                tr joined              85      2702394457 
+ TOTAL: 47099 us(gettimeofday)  tracebuf overflow: 0
 ---------------------------------------------------------------
-test=list-none-48part threadNum=12 iterations=1000000 numList=48 numOperation=12000000 runTime(ms)=44 tput(Mops)=268.54
+test=list-none-48part threadNum=12 iterations=1000000 numList=48 numOperation=12000000 runTime(ms)=46 tput(Mops)=255.46
 USE_PREALLOC=yes
 USE_MULTILISTS=no
 USE_LB=yes
@@ -217,49 +217,49 @@ USE_PADDING=no
 init 1 mutex, 64 spinlocks
 init 16 lists. sizeof(SortedList_t) = 24 padding seems: OFF
 init 16000000 elements
-list 0: 1750000 items; list 1: 1000000 items; list 2: 750000 items; list 3: 750000 items; list 4: 750000 items; list 5: 1000000 items; list 6: 1000000 items; list 7: 1000000 items; list 8: 1000000 items; list 9: 1000000 items; list 10: 1000000 items; list 11: 750000 items; list 12: 1000000 items; list 13: 1000000 items; list 14: 1000000 items; list 15: 1250000 items; 
+list 0: 1250000 items; list 1: 1000000 items; list 2: 1000000 items; list 3: 1250000 items; list 4: 1000000 items; list 5: 750000 items; list 6: 1000000 items; list 7: 1250000 items; list 8: 1250000 items; list 9: 1000000 items; list 10: 1000000 items; list 11: 1000000 items; list 12: 750000 items; list 13: 1000000 items; list 14: 750000 items; list 15: 750000 items; 
 total 16000000 items
 --------------------k2_measure_flush------#samples=36---------------
                                      msg   delta(tod/us)        now(tod) 
-*                                    init               0       206536350 
-                                init done              94       206536444 
-                                 tr start              51       206536495 
-                                 tr start              17       206536512 
-                                 tr start              27       206536539 
-                                 tr start              37       206536576 
-                                 tr start              20       206536596 
-                                 tr start              31       206536627 
-                                 tr start              77       206536704 
-                                 tr start              46       206536750 
-                                 tr start              38       206536788 
-                                 tr start              55       206536843 
-                                 tr start              43       206536886 
-                                 tr start             104       206536990 
-                                 tr start             100       206537090 
-                                 tr start              94       206537184 
-                              tr launched             104       206537288 
-                                 tr start               9       206537297 
-                                 tr start           12312       206549609 
-                                  tr done           30425       206580034 
-                                  tr done             311       206580345 
-                                  tr done             230       206580575 
-                                  tr done             548       206581123 
-                                  tr done             337       206581460 
-                                  tr done             550       206582010 
-                                  tr done             169       206582179 
-                                  tr done              47       206582226 
-                                  tr done            1777       206584003 
-                                  tr done             965       206584968 
-                                  tr done              40       206585008 
-                                  tr done             115       206585123 
-                                  tr done             945       206586068 
-                                  tr done              30       206586098 
-                                  tr done             392       206586490 
-                                  tr done             790       206587280 
-                                tr joined              41       206587321 
- TOTAL: 50971 us(gettimeofday)  tracebuf overflow: 0
+*                                    init               0      2702454353 
+                                init done              93      2702454446 
+                                 tr start              69      2702454515 
+                                 tr start               7      2702454522 
+                                 tr start              16      2702454538 
+                                 tr start              31      2702454569 
+                                 tr start              28      2702454597 
+                                 tr start              26      2702454623 
+                                 tr start              30      2702454653 
+                                 tr start              65      2702454718 
+                                 tr start              22      2702454740 
+                                 tr start              20      2702454760 
+                                 tr start             168      2702454928 
+                                 tr start              18      2702454946 
+                                 tr start             218      2702455164 
+                                 tr start             113      2702455277 
+                                 tr start             209      2702455486 
+                              tr launched             174      2702455660 
+                                 tr start           12087      2702467747 
+                                  tr done           26836      2702494583 
+                                  tr done            1341      2702495924 
+                                  tr done            2176      2702498100 
+                                  tr done              86      2702498186 
+                                  tr done            3559      2702501745 
+                                  tr done             210      2702501955 
+                                  tr done              34      2702501989 
+                                  tr done             627      2702502616 
+                                  tr done             161      2702502777 
+                                  tr done              27      2702502804 
+                                  tr done             421      2702503225 
+                                  tr done              65      2702503290 
+                                  tr done             119      2702503409 
+                                  tr done             544      2702503953 
+                                  tr done              77      2702504030 
+                                  tr done             143      2702504173 
+                                tr joined              62      2702504235 
+ TOTAL: 49882 us(gettimeofday)  tracebuf overflow: 0
 ---------------------------------------------------------------
-test=list-none-64part threadNum=16 iterations=1000000 numList=64 numOperation=16000000 runTime(ms)=50 tput(Mops)=314.50
+test=list-none-64part threadNum=16 iterations=1000000 numList=64 numOperation=16000000 runTime(ms)=49 tput(Mops)=321.35
 USE_PREALLOC=yes
 USE_MULTILISTS=no
 USE_LB=yes
@@ -267,54 +267,54 @@ USE_PADDING=no
 init 1 mutex, 80 spinlocks
 init 20 lists. sizeof(SortedList_t) = 24 padding seems: OFF
 init 20000000 elements
-list 0: 1250000 items; list 1: 1000000 items; list 2: 1000000 items; list 3: 1000000 items; list 4: 1000000 items; list 5: 1000000 items; list 6: 1250000 items; list 7: 1250000 items; list 8: 1000000 items; list 9: 1000000 items; list 10: 750000 items; list 11: 1000000 items; list 12: 750000 items; list 13: 1250000 items; list 14: 750000 items; list 15: 1000000 items; list 16: 1000000 items; list 17: 1000000 items; list 18: 750000 items; list 19: 1000000 items; 
+list 0: 1250000 items; list 1: 1250000 items; list 2: 1000000 items; list 3: 1250000 items; list 4: 750000 items; list 5: 750000 items; list 6: 1000000 items; list 7: 1000000 items; list 8: 1000000 items; list 9: 1000000 items; list 10: 1000000 items; list 11: 1000000 items; list 12: 1000000 items; list 13: 1000000 items; list 14: 1000000 items; list 15: 1250000 items; list 16: 1000000 items; list 17: 1000000 items; list 18: 1000000 items; list 19: 500000 items; 
 total 20000000 items
 --------------------k2_measure_flush------#samples=44---------------
                                      msg   delta(tod/us)        now(tod) 
-*                                    init               0       206660371 
-                                init done             200       206660571 
-                                 tr start              70       206660641 
-                                 tr start              74       206660715 
-                                 tr start              52       206660767 
-                                 tr start              18       206660785 
-                                 tr start              44       206660829 
-                                 tr start              41       206660870 
-                                 tr start              39       206660909 
-                                 tr start              43       206660952 
-                                 tr start             133       206661085 
-                                 tr start              54       206661139 
-                                 tr start             118       206661257 
-                                 tr start              65       206661322 
-                                 tr start              57       206661379 
-                                 tr start             122       206661501 
-                                 tr start              93       206661594 
-                                 tr start             151       206661745 
-                                 tr start             151       206661896 
-                                 tr start             246       206662142 
-                                 tr start             119       206662261 
-                              tr launched             206       206662467 
-                                 tr start            7238       206669705 
-                                  tr done           38325       206708030 
-                                  tr done             560       206708590 
-                                  tr done             497       206709087 
-                                  tr done             570       206709657 
-                                  tr done             429       206710086 
-                                  tr done              65       206710151 
-                                  tr done             180       206710331 
-                                  tr done             118       206710449 
-                                  tr done             289       206710738 
-                                  tr done             551       206711289 
-                                  tr done             505       206711794 
-                                  tr done              25       206711819 
-                                  tr done             337       206712156 
-                                  tr done             144       206712300 
-                                  tr done              25       206712325 
-                                  tr done             134       206712459 
-                                  tr done            1113       206713572 
-                                  tr done            1231       206714803 
-                                  tr done             231       206715034 
-                                  tr done             221       206715255 
-                                tr joined              57       206715312 
- TOTAL: 54941 us(gettimeofday)  tracebuf overflow: 0
+*                                    init               0      2702585767 
+                                init done             112      2702585879 
+                                 tr start              70      2702585949 
+                                 tr start              51      2702586000 
+                                 tr start              19      2702586019 
+                                 tr start              62      2702586081 
+                                 tr start               3      2702586084 
+                                 tr start              32      2702586116 
+                                 tr start              38      2702586154 
+                                 tr start              38      2702586192 
+                                 tr start              26      2702586218 
+                                 tr start              77      2702586295 
+                                 tr start             100      2702586395 
+                                 tr start              96      2702586491 
+                                 tr start             110      2702586601 
+                                 tr start             371      2702586972 
+                                 tr start               5      2702586977 
+                                 tr start              15      2702586992 
+                                 tr start             143      2702587135 
+                                 tr start             218      2702587353 
+                                 tr start             262      2702587615 
+                              tr launched             182      2702587797 
+                                 tr start            8444      2702596241 
+                                  tr done           36325      2702632566 
+                                  tr done              49      2702632615 
+                                  tr done             449      2702633064 
+                                  tr done             824      2702633888 
+                                  tr done            1077      2702634965 
+                                  tr done             569      2702635534 
+                                  tr done             716      2702636250 
+                                  tr done             907      2702637157 
+                                  tr done             176      2702637333 
+                                  tr done             209      2702637542 
+                                  tr done               7      2702637549 
+                                  tr done             115      2702637664 
+                                  tr done             130      2702637794 
+                                  tr done             610      2702638404 
+                                  tr done            1265      2702639669 
+                                  tr done             222      2702639891 
+                                  tr done              85      2702639976 
+                                  tr done             120      2702640096 
+                                  tr done              41      2702640137 
+                                  tr done             248      2702640385 
+                                tr joined              68      2702640453 
+ TOTAL: 54686 us(gettimeofday)  tracebuf overflow: 0
 ---------------------------------------------------------------
-test=list-none-80part threadNum=20 iterations=1000000 numList=80 numOperation=20000000 runTime(ms)=54 tput(Mops)=365.38
+test=list-none-80part threadNum=20 iterations=1000000 numList=80 numOperation=20000000 runTime(ms)=54 tput(Mops)=366.47
